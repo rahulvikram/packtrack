@@ -18,6 +18,11 @@ Redux Toolkit Query Integration:
 WebSockets Integration:
 - Use WebSockets to receive real-time updates for package status changes.
 
+RabbitMQ Integration:
+
+
+Deployment
+- Use similar deployment strategy as the one used for personal website.
 
 
                          +----------------------------+
