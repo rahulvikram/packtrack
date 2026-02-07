@@ -27,10 +27,11 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 - RTK Query
 - Clerk
 - Tailwind CSS
-- WebSockets
 ### Backend
 - Express.js
+- Socket.IO
 - Node.js
+- AWS 
 ### Message Queuing
 - RabbitMQ (via Node.js amqplib)
 ### Cloud/Data
