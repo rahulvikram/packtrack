@@ -10,15 +10,15 @@ import {
 
 export default function Navbar() {
   return (
-    <header className="border-b bg-card/95 backdrop-blur">
+    <header className="border-b border-navy bg-navy bg-card/95 backdrop-blur">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500">
-            <Package className="h-5 w-5 text-primary-foreground" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-tangerine">
+            <Package className="h-5 w-5 text-white" />
           </div>
           <div className="flex items-center gap-0">
-            <span className="text-xl font-bold">Pack</span>
-            <span className="text-xl font-bold text-blue-500">Track</span>
+            <span className="text-xl font-bold text-white">Pack</span>
+            <span className="text-xl font-bold text-tangerine">Track</span>
           </div>
         </Link>
         <div className="flex items-center gap-4">
