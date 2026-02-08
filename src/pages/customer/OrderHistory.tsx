@@ -23,6 +23,7 @@ import { Button } from "@/src/components/ui/button";
 import { Package, Eye } from "lucide-react";
 import { format } from "date-fns";
 import type { Package as PackageType, PackageStatus } from "@/src/types";
+import { TrackPackageModal } from "@/src/components/TrackPackageModal";
 
 // This would come from your API when user is logged in
 const mockOrders: PackageType[] = [];
@@ -30,8 +31,12 @@ const mockOrders: PackageType[] = [];
 export default function OrderHistory() {
   const [statusFilter, setStatusFilter] = useState<PackageStatus | "all">("all");
   const [showTrackPackageModal, setShowTrackPackageModal] = useState(false);
-  
-  // TODO: Implement handleTrackPackage function
+
+  const handleTrackPackage = (trackingId: string) => {
+    // TODO: call backend API route to fetch package via tracking ID and add to order history tracking
+    console.log("Tracking ID received:", trackingId);
+    alert(`Tracking package: ${trackingId}`);
+  };
   
   const filteredOrders = mockOrders.filter((order) => {
     if (statusFilter === "all") return true;
