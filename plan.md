@@ -10,7 +10,22 @@ Order History Page
 
 
 Express API Layer
-
+- Built with Node.js and Express, exposes a set of RESTful API endpoints for all system operations.
+- Handles authentication and authorization for both admin and customer routes (e.g. via Clerk-provided middleware or tokens).
+- Implements RESTful routes for:
+    - Producing
+        - Creating a package tracking entry (when customer adds a new tracking number)
+        - Updating package status and details (admin only)
+        - Deleting package entry from tracking system
+    - Consuming
+        - Fetching package by tracking ID
+        - Listing all packages for a given user
+        - Deleting/canceling a package tracking entry
+- Integrates with PostgreSQL to read/write user and package data.
+- Publishes package status updates as events to RabbitMQ to enable asynchronous processing and downstream integrations.
+- Emits real-time events to connected clients (e.g., with Socket.IO) for live status updates.
+- Includes rate limiting, logging, and error handling middleware for robust production use.
+- Serves as the main orchestration layer between frontend, database, event stream (RabbitMQ), and real-time updates.
 
 Redux Toolkit Query Integration:
 - Use Redux Toolkit Query to fetch package details and perform data caching on the client side.

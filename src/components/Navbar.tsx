@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <SignedOut>
             <SignInButton>
-              <Button variant="ghost">Customer Login</Button>
+              <Button>Customer Login</Button>
             </SignInButton>
             <Button variant="outline" asChild>
               <Link href="/admin/login">Admin Portal</Link>

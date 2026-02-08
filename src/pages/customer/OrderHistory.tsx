@@ -29,7 +29,10 @@ const mockOrders: PackageType[] = [];
 
 export default function OrderHistory() {
   const [statusFilter, setStatusFilter] = useState<PackageStatus | "all">("all");
-
+  const [showTrackPackageModal, setShowTrackPackageModal] = useState(false);
+  
+  // TODO: Implement handleTrackPackage function
+  
   const filteredOrders = mockOrders.filter((order) => {
     if (statusFilter === "all") return true;
     return order.status === statusFilter;
@@ -37,6 +40,12 @@ export default function OrderHistory() {
 
   return (
     <div className="min-h-[calc(100vh-4rem)]">
+      {showTrackPackageModal && (
+        <TrackPackageModal
+          onClose={() => setShowTrackPackageModal(false)}
+          onTrackPackage={handleTrackPackage}
+        />
+      )}
       {/* Colorful header banner */}
       <div className="relative overflow-hidden bg-gradient-to-r from-navy via-navy/90 to-[#00516e]">
         <div className="absolute inset-0 bg-gradient-to-br from-tangerine/10 via-transparent to-golden/10" />
@@ -55,7 +64,7 @@ export default function OrderHistory() {
         <div className="mb-6 flex items-center justify-between">
           <Select
             value={statusFilter}
-            onValueChange={(value) => setStatusFilter(value as PackageStatus | "all")}
+            onValueChange={(value: PackageStatus | "all") => setStatusFilter(value)}
           >
             <SelectTrigger className="w-[180px] border-golden/40 bg-cream/30">
               <SelectValue placeholder="Filter by status" />
@@ -83,7 +92,7 @@ export default function OrderHistory() {
               mockOrders.length === 0
                 ? {
                     label: "Track a Package",
-                    onClick: () => window.location.href = "/track",
+                    onClick: () => setShowTrackPackageModal(true)
                   }
                 : undefined
             }
