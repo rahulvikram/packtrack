@@ -7,7 +7,7 @@ import {
   SignedOut,
 } from "@clerk/nextjs";
 import Navbar from "@/src/components/Navbar";
-import OrderHistory from "@/src/pages/customer/OrderHistory";
+import OrderHistory from "@/src/pages/Customer/OrderHistory";
 
 const features = [
   {
