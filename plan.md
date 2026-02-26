@@ -12,6 +12,11 @@ Order History Page
 Express API Layer
 - Built with Node.js and Express, exposes a set of RESTful API endpoints for all system operations.
 - Handles authentication and authorization for both admin and customer routes (e.g. via Clerk-provided middleware or tokens).
+    - Will possibly have to use authenticated requests to the API routes. (ref: https://clerk.com/docs/guides/development/making-requests)
+    - User logs in via Clerk.
+    - Clerk issues JWT.
+    - Frontend sends JWT to your Node.js backend.
+    - Backend verifies JWT using Clerk’s public key.
 - Implements RESTful routes for:
     - Producing
         - Creating a package tracking entry (when customer adds a new tracking number)
